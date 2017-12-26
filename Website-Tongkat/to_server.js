@@ -1,14 +1,30 @@
 function startSensor(){
+	$.ajax({
+        type: "POST",
+        url: "client.php",
+        data: "start",
+        success: function (data) {
+			console.log(data);
+        }
+    });	
 }
 
 function stopSensor(){
+	$.ajax({
+        type: "POST",
+        url: "client.php",
+        data: "stop",
+        success: function (data) {
+			console.log(data);
+        }
+    });
 }
 
 function getLog(){
 	$.ajax({
         type: "POST",
         url: "client.php",
-        data: "getLog",
+        data: "getJSON",
         success: function (data) {
 			console.log(data);
 			$("#log-table").empty();

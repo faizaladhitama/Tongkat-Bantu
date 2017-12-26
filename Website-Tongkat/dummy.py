@@ -1,1 +1,2 @@
-print("Hello buddy");
+while 1:
+	pass
