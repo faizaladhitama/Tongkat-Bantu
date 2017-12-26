@@ -1,7 +1,7 @@
 <?php
 foreach($_POST as $key => $value){
 	if($key == "getJSON"){
-		getJSON();
+		getJson();
 	}
 	else if($key == "stop"){
 		stopSensor();
@@ -16,13 +16,10 @@ function startSensor(){
 }
 
 function stopSensor(){
-	echo shell_exec("whoami");
-	$proses1 = shell_exec("ps -ef | grep dummy.py | head -n 1 | awk '{print $2}'");
+	$proses1 = (int)shell_exec("ps -ef | grep dummy.py | head -n 1 | awk '{print $2}'");
 	$proses2 = (int)$proses1 + 1;
-	$killCommand = "./kill.sh $proses1";
-	echo $killCommand;
-	$kill = exec($killCommand);
-	echo $kill;
+	shell_exec("kill -9 $proses1");
+	shell_exec("kill -9 $proses2");
 }
 
 function getJson(){
