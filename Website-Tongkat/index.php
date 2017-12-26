@@ -6,11 +6,15 @@
   <div class="row content">
     <div class="col-sm-12 text-left"> 
       <h1>Welcome</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Website ini dipergunakan untuk memberikan log data kepada user, mengaktifkan sensor, dan mematikan sensor</p>
       <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
-      <button onclick="sendToServer()">Send to server</button>
+      <button onclick="getLog()">Receive log data</button>
+      <button onclick="startSensor()">Start sensor</button>
+      <button onclick="stopSensor()">Stop sensor</button>
+      <div class="table-responsive">
+		<table id="log-table" class="table">
+		</table>
+      </div>
     </div>
   </div>
 </div>
