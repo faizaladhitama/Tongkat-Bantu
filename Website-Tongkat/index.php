@@ -10,6 +10,7 @@
       <hr>
       <h3>Test</h3>
       <p>Lorem ipsum...</p>
+      <button onclick="sendToServer()">Send to server</button>
     </div>
   </div>
 </div>

@@ -1,3 +1,4 @@
+import json
 import math
 import random
 from socket import *
@@ -8,7 +9,9 @@ serverSocket = socket(AF_INET, SOCK_STREAM)
 serverSocket.bind(('', serverPort))
 serverSocket.listen(1)
 print('The server is ready to receive')
-server_db = dict()
+data={"a":1,"b":2,"c":3}
+with open('data.json', 'w') as outfile:
+    json.dump(data, outfile)
 while 1:
 	connectionSocket, addr = serverSocket.accept()
 	try:
@@ -16,8 +19,9 @@ while 1:
 		print("Connection success....")
 		output=sentence.decode()
 		print(output)
+		dataJSON = json.dumps(data)
 		output+="\r\n"
-		connectionSocket.send(output.encode())
+		connectionSocket.send(dataJSON.encode())
 		print("Connection end....")
 		connectionSocket.close()
 	except:
